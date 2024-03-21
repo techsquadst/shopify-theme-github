@@ -41,16 +41,18 @@
         }
       }
     </style>
+    {% for designer in shop.metaobjects.designer.values %}
     <div class="designer-container">
       <div class="img">
-          <img src="{{designer.picture |img_url:'500x' }}" alt="Designer">
+          <img src="{{designer.photo |img_url:'500x' }}" alt="Designer">
       </div>
       <div class="designer-body">
-          <h2 class="h1">{{ designer.headline }}</h2>
+          <h2 class="h1">{{ designer.name }}</h2>
           <p class="designer-text">{{ designer.description }}</p>
-          <a href="{{ designer.collection_link }}" class="button button--primary">See all their products</a>
+          <a href="{{ designer.website }}" class="button button--primary">See all their products</a>
       </div>
     </div>
+    {% endfor %}
     {% schema %}
       {
         "name": "Designers",
